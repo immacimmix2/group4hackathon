@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kacyber - Login / SignUp</title>
+  <link rel="stylesheet" href="indexstyle.css" />
+</head>
+<body class="login-page">
+    <div id="google_translate_element"></div>
+
+  <!-- Top Bar (Logo + Languages) -->
+  <div class="top-bar">
+    <img src="logo.jpg" class="logo" alt="Kacyber Logo" />
+    
+    <div class="lang-buttons">
+      <button class="lang-btn" onclick="setLanguage('english')">English</button>
+      <button class="lang-btn" onclick="setLanguage('luganda')">Luganda</button>
+      <button class="lang-btn" onclick="setLanguage('lusoga')">Lusoga</button>
+    </div>
+  </div>
+
+  <!-- Login Box -->
+  <div class="login-container">
+    <h2>Welcome to Safe Move by Kacyber,<br>Your Trusted Travel Partner</h2>
+    
+    <div class="tabs">
+        
+      <button class="tab active" id="loginTab" onclick="showForm('login')">Login</button>
+      <button class="tab" id="registerTab" onclick="showForm('register')">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form active">
+      <input type="text" placeholder="Email / Phone Number" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit" class="btn">Login</button>
+      <a href="#" class="forgot">Forgot Password</a>
+      <p class="google">Continue with Google</p>
+    </form>
+
+    <!-- Register Form -->
+    <form id="SignupForm" class="form">
+      <select class="dropdown" id="userType" onchange="goToSignupPage()">
+        <option value="client">Passenger</option>
+        <option value="driver">Driver</option>
+        <option value="rider">Rider</option>
+      </select>
+    </form>
+  </div>
+  <script src="script.js"></script>
+  <script scr="login.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+</body>
+</html>

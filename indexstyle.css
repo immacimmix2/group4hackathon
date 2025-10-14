@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  font-family: 'calibri', sans-serif;
+  background: #f8fff8;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 85%;
+  max-width: 400px;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #075e07;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  background: #0f8a0f;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80%;
+}
+
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(15,138,15,0.5);
+}
+
+.dropdown {
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Splash */
+.splash-screen {
+  background: #0f8a0f;
+  color: white;
+  flex-direction: column;
+}
+
+.splash-logo {
+  width: 150px;
+  border-radius: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.splash-text {
+  font-size: 28px;
+  margin-top: 20px;
+  animation: fadeSlide 3s ease-in-out;
+  color: #e0ffe0;
+} 
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Fullscreen Background */
+.login-page {
+  background: url('Bus.jpg') no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 110px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* Language Buttons */
+.lang-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #0d700d;
+}
+
+.lang-btn:hover {
+  background: #0f8a0f;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Login Container */
+.login-container {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1.3s ease-in-out;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  margin: 0 12px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  color: #00d900;
+  border-bottom: 2px solid #00d900;
+}
+
+.tab:hover {
+  transform: scale(1.1);
+}
+
+/* Forms */
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+input, select {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.dropdown {
+  width: 95%;
+  background: #fff;
+}
+
+.btn {
+  width: 95%;
+  padding: 12px;
+  background: #00d900;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 217, 0, 0.6);
+}
+
+.forgot {
+  display: block;
+  margin-top: 10px;
+  color: #ffa500;
+  text-decoration: none;
+}
+
+.google {
+  color: #ddd;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

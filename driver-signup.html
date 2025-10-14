@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideNet driver Sign Up</title>
+  <link rel="stylesheet" href="signup-style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>RideNet Driver Sign Up</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="e.g. John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  placeholder="immacimmix2@gmail.com"required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+256 784612686" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male" id="male">Male</option>
+          <option value="female" id="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nin">NIN:</label>
+        <input type="text" id="nin" name="nin" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">VehicleType:</label>
+        <select id="gender" name="vehicletype" required>
+          <option value="">Select Vehicle</option>
+          <option value="male">Bus</option>
+          <option value="female">Taxi</option>
+          <option value="other">Car</option>
+           <option value="other">Boda Boda</option>
+        </select>
+      </div>
+      <h2>Next of Kin details</h2>
+      <div class="form-group">
+        <label for="nextofkin">Fullname:</label>
+        <input type="text" id="nextofkin" name="nextofkin" required>
+      </div>
+        
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="nextofkin" name="phone" placeholder="+256 784612686" required>
+      </div>
+      <div class="form-group">
+        <label for="rp">Relationship:</label>
+        <select id="rp" name="relationship" required>
+          <option value="male">Parent</option>
+          <option value="female">Spouse</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  </div>
+  <div class="form-group">
+  <label for="password">Confirm Password:</label>
+  <input type="password" id="password" name="password" required>
+  </div>
+
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

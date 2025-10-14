@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Sign Up</title>
+  <link rel="stylesheet" href="signup-style.css">
+</head>
+<body>
+  <div id="google_translate_element"></div>
+  <div class="container">
+    <h2>RideNet Passenger Sign Up</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="e.g. John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  placeholder="immacimmix2@gmail.com"required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+256 784612686" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nin">NIN:</label>
+        <input type="text" id="nin" name="nin" required>
+      </div>
+      <h2>Next of Kin details</h2>
+      <div class="form-group">
+        <label for="nextofkin">Fullname:</label>
+        <input type="text" id="nextofkin" name="nextofkin" required>
+      </div>
+        
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+256 784612686" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Relationship:</label>
+        <select id="gender" name="relationship" required>
+          <option value="male">Parent</option>
+          <option value="female">Spouse</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script src="signup-main.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

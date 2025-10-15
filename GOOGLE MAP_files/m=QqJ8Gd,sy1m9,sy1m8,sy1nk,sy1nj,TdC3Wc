@@ -1,0 +1,27 @@
+this._s=this._s||{};(function(_){var window=this;
+try{
+_.t("QqJ8Gd");
+var pKc;
+_.qKc=function(a,b,c=!1,d,e){d=d||a.oa;if(!_.oKc(a,d))return!1;let f,g;try{g=c?_.lw(a.Ca,d):null;f=d.createElement("textarea");f.value=b;f.setAttribute("readonly","");_.nm(f,"height",0);d.body.appendChild(f);if(a.Da)f.select();else{const h=d.createRange();h.selectNodeContents(f);a.Aa.getSelection().removeAllRanges();a.Aa.getSelection().addRange(h);f.setSelectionRange(0,b.length)}d.addEventListener("copy",h=>{h.clipboardData.setData("text/plain",b);e&&h.clipboardData.setData(e,b);h.preventDefault()},{once:!0,
+capture:!0});return pKc(a,d)}finally{f&&_.bm(f),g&&_.kw(g)}};pKc=function(a,b){b=b||a.oa;try{return _.oKc(a,b)?b.execCommand("copy"):!1}catch(c){return!1}};_.oKc=function(a,b){b=b||a.oa;b=b.queryCommandSupported("copy");!b&&a.Ba&&(a.Ba=!0);return b};
+_.Kz=class extends _.Zn{static Sa(){return{service:{focus:_.qw,window:_.$n}}}constructor(a){super();this.Ul=null;this.oa=a.service.window.getDocument();this.Aa=a.service.window.get();this.Ca=a.service.focus;this.Da=!_.ra()&&!_.Bd.gMa();this.Ba=!1}copy(a,b=!1,c,d){c=c||this.oa;return a?_.qKc(this,a,b,c,d):pKc(this,c)}};_.Le(_.Jz,_.Kz);
+_.u();
+}catch(e){_._DumpException(e)}
+try{
+_.j5c=_.x("CHCSlb",[]);_.Ec(_.j5c);
+}catch(e){_._DumpException(e)}
+try{
+_.f5c=_.x("mzzZzc",[]);_.Ec(_.f5c);
+}catch(e){_._DumpException(e)}
+try{
+_.A8c=_.x("fmklff",[_.Yg,_.f5c,_.j5c]);
+}catch(e){_._DumpException(e)}
+try{
+_.t("TdC3Wc");
+_.o5e=class extends _.Zn{static Sa(){return{service:{clipboard:_.Kz,window:_.AZe}}}constructor(a){super();this.Vv=a.service.clipboard;this.oa=a.service.window}copy(a,b=0){this.Vv.copy(a,!1,this.oa.getDocument())?(a=_.la(),_.ia(a,"SamsungBrowser")||(_.ia(a,"Version/0.")||_.ia(a,"Version/1.")||_.ia(a,"Version/2.")||_.ia(a,"Version/3."))&&(_.ia(a,"SAMSUNG")||_.ia(a,"SM-")||_.ia(a,"SGH-"))||this.Fj("Text copied to clipboard",b)):this.Fj("Failed to copy text",b)}async Fj(a,b){try{a:switch(b){case 0:var c=
+"yuChW";break a;case 1:c="yuChW YEw87d";break a;default:c=null}(b=c)&&_.y(await _.y(_.m5e(this,"snackbar",_.A8c))).oa({label:a,FD:!0,Xb:b})}finally{_.y()}}};_.Le(_.l5e,_.o5e);
+
+_.u();
+}catch(e){_._DumpException(e)}
+})(this._s);
+// Google Inc.

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Scanner | KaCyber</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    #reader {
+      width: 320px;
+      max-width: 90vw;
+      border: 3px solid #007bff;
+      border-radius: 10px;
+      background: white;
+      padding: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 12px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      width: 320px;
+      max-width: 90vw;
+      word-break: break-word;
+      text-align: center;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 10px 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.stop {
+      background: #dc3545;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 20px;
+      color: #555;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan QR Code</h1>
+
+  <!-- QR Code Reader -->
+  <div id="reader"></div>
+
+  <!-- Result Display -->
+  <div id="result">No QR code detected yet.</div>
+
+  <!-- Control Buttons -->
+  <button id="startBtn" class="btn">Start Scanner</button>
+  <button id="stopBtn" class="btn stop">Stop Scanner</button>
+
+  <div class="footer">
+    © 2025 KaCyber — SafeLink Passenger Verification
+  </div>
+
+  <!-- html5-qrcode Library -->
+  <script src="https://unpkg.com/html5-qrcode"></script>
+
+  <script>
+    const readerDiv = document.getElementById("reader");
+    const resultDiv = document.getElementById("result");
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    let isScanning = false;
+
+    async function startScanner() {
+      if (isScanning) return;
+      try {
+        const cameras = await Html5Qrcode.getCameras();
+        if (cameras && cameras.length) {
+          const cameraId = cameras[0].id; // Use first available camera
+          html5QrCode.start(
+            cameraId,
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            (decodedText) => {
+              resultDiv.innerHTML = `<b>Scanned Code:</b> ${decodedText}`;
+              // Example: verify number plate or ticket
+              if (decodedText.startsWith("KC-")) {
+                resultDiv.style.background = "#d4edda";
+                resultDiv.style.borderColor = "#28a745";
+              } else {
+                resultDiv.style.background = "#f8d7da";
+                resultDiv.style.borderColor = "#dc3545";
+              }
+            },
+            (errorMessage) => {
+              // Ignore scanning errors
+            }
+          );
+          isScanning = true;
+        } else {
+          alert("No camera found on this device.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error accessing camera: " + err.message);
+      }
+    }
+
+    async function stopScanner() {
+      if (!isScanning) return;
+      await html5QrCode.stop();
+      isScanning = false;
+      resultDiv.innerText = "Scanner stopped.";
+    }
+
+    startBtn.addEventListener("click", startScanner);
+    stopBtn.addEventListener("click", stopScanner);
+  </script>
+</body>
+</html>

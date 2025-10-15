@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Ride Option | KaCyber</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0f8a0f;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Page Container */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    /* Cards */
+    .option-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      text-align: center;
+      padding: 25px 20px;
+      margin: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .option-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #0f8a0f;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Button */
+    .option-card button {
+      margin-top: 15px;
+      background: #0f8a0f;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option-card button:hover {
+      background: #0f8a0f;
+    }
+    #btnn a{
+      text-decoration: none;
+      color: white;
+    }
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .option-card {
+        width: 90%;
+      }
+    }
+
+    footer {
+      background: #0f8a0f;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <nav>KaCyber Passenger</nav>
+
+  <div class="container">
+    <!-- Option 1: Order Ride -->
+    <div class="option-card" onclick="window.location.href='order-ride.html'">
+      <img src="car.png" alt="Order Ride">
+      <h2>Order a Ride</h2>
+      <p>Set your pickup and destination locations to request a personalized ride.</p>
+      <button id="btnn"><a href="passengerhome.html">Order Now</a></button>
+    </div>
+
+    <!-- Option 2: Random Boda -->
+    <div class="option-card" onclick="window.location.href='random-boda.html'">
+      <img src="boda.png" alt="Random Ride">
+      <h2>Choose Random Ride</h2>
+      <p>Need a quick lift? Get connected to the nearest available ride instantly.</p>
+      <button id="btnn"><a href="QRcode.html">Find Ride</a></button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 KaCyber Passenger App. All rights reserved.
+  </footer>
+</body>
+</html>

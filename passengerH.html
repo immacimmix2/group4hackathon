@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passengers Home page</title>
+    <link rel="stylesheet" href="passhomepage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">Kacyber</div>
+        <div class="profile-info">
+           <img src="images/hut.jfif" alt="">
+           <p>Merab Apio</p></div>
+           
+    </nav>
+    <div class="container">
+        
+        <aside class="sidebar">
+                <div class="sidebar-links">
+                <a href="passengerH.html" class="active">Ride History</a>   
+                
+                <a href="passengerprofile.html">Profile</a>   
+                <a href="login.html">Logout</a>
+            </div>      
+            <div id="scan">
+                <img src="images/download.png" alt="">
+                <button id="scanButton" class="btn">Scan Number Plate</button>
+                <p id="result"></p>
+               
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="main-bar">
+        <h1>Welcome back Merab, Ready to Order your next Rides?</h1>
+        <div class="ride-form">
+             <h2>Order a Ride</h2>
+             <form id="rideForm" action="#" method="post">
+               
+                <input type="text" id="pickup" name="pickup" placeholder="Pickup Location" required><br>
+                
+               
+                <input type="text" id="dropoff" name="dropoff"  placeholder="Drop-off Location"><br>
+
+                <select id="means" name="means"  required>
+                    <option value="car">Select means</option>
+                      <option value="car">Boda</option>
+                    <option value="car">Car</option>
+                    <option value="bus">Bus</option>
+                    <option value="taxi">Taxi</option>
+                </select><br>
+                
+                <button type="submit" class="btn" onclick="showPopup()">Order Now</button><br>
+  
+           
+        </div>
+<div id="image"><img src="images/map.PNG" alt="Book a Ride"></div>
+
+        <div class="tips">
+           <h2>Today's Safety Tips</h2>
+              <ul>
+                <li>Always wear your seatbelt.</li>
+                <li>Follow traffic rules and signals.</li>
+                <li>Stay alert and avoid distractions while driving.</li>
+                <li>Keep a safe distance from other vehicles.</li>
+                <li>Regularly maintain your vehicle for safety.</li>   
+                </ul>
+        <div id="ride-popup" class="popup-overlay" style="display:none;">
+            <div class="popup-card">
+                <button class="popup-close" onclick="hidePopup()">&times;</button>
+                <h2>Incoming Ride Offer</h2>
+                <div class="profile-info">
+                    <p><strong>Driver:</strong> Jane Smith</p>
+                    <p><strong>Vehicle:</strong> Toyota Prius (KDA 123A)</p>
+                    <p><strong>Pickup:</strong> City Mall</p>
+                    <p><strong>Dropoff:</strong> Airport</p>
+                    <p><strong>Estimated Fare:</strong> $12.00</p>
+                    <p><strong>Estimated Arrival:</strong> 5 minutes</p>
+                </div>
+                <form class="accept-reject-form">
+                    <button class="btn save-btn" type="submit" onclick="acceptRide(event)">Accept Ride</button>
+                    <button class="btn cancel-btn" type="button" onclick="rejectRide()">Reject Ride</button>
+                </form>
+                <div id="ride-response" style="margin-top:18px;"></div>
+            </div>
+        </div>
+        </main>
+    </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
+   <script src="passenger.js"></script>
+    
+</body>
+</html>

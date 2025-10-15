@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Profile - SafeTravel</title>
+    <link rel="stylesheet" href="passhomepage.css">
+</head>
+<body>
+    <header class="profile-header">
+        <h1>Profile</h1>
+    </header>
+    <main>
+        <section class="profile-card">
+            <form class="upload-form" enctype="multipart/form-data">
+                <label for="profile-upload" class="upload-label">
+                    <img src="images/hut.jfif" alt="Profile Picture" class="profile-pic">
+                    <input type="file" id="profile-upload" name="profile-upload" accept="image/*" style="display:none;">
+                    <span class="upload-btn">Upload Photo</span>
+                </label>
+            </form>
+            <h2>Merab Apio</h2>
+            <p class="profile-email">merabapio@gmail.com</p>
+            <div class="profile-info">
+                <p><strong>Phone:</strong> 0786785643</p>
+                <p><strong>Member Since:</strong> January 2024</p>
+                <p><strong>Total Rides:</strong> 25</p>
+            </div>
+             <button class="btn edit-btn" id="edit-info-btn" type="button" onclick="showEditForm()">Edit Information</button>
+            <form id="edit-info-form" class="edit-info-form" style="display:none;">
+                <input type="text" id="edit-name" value="John Doe" required>
+                <input type="email" id="edit-email" value="johndoe@example.com" required>
+                <input type="text" id="edit-phone" value="+123 456 7890" required>
+                <button class="btn save-btn" type="submit">Save</button>
+                <button class="btn cancel-btn" type="button" onclick="hideEditForm()">Cancel</button>
+            </form>
+            <a class="btn" href="passengerH.html">Back to Dashboard</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 SafeTravel. All rights reserved.</p>
+    </footer>
+    <script>
+                function showEditForm() {
+                    document.getElementById('edit-info-form').style.display = 'block';
+                    document.getElementById('profile-info-view').style.display = 'none';
+                    document.getElementById('edit-info-btn').style.display = 'none';
+                }
+                function hideEditForm() {
+                    document.getElementById('edit-info-form').style.display = 'none';
+                    document.getElementById('profile-info-view').style.display = 'block';
+                    document.getElementById('edit-info-btn').style.display = 'inline-block';
+                }
+                document.getElementById('edit-info-form').onsubmit = function(e) {
+                    e.preventDefault();
+                    document.getElementById('profile-name').textContent = document.getElementById('edit-name').value;
+                    document.getElementById('profile-email').textContent = document.getElementById('edit-email').value;
+                    document.getElementById('profile-phone').textContent = document.getElementById('edit-phone').value;
+                    hideEditForm();
+                };
+            </script>
+</body>
+</html>

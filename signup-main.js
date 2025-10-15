@@ -1,5 +1,7 @@
 // RideNet Passenger Sign-Up Script
 
+const BASE_URL = "http://localhost:3000";
+
 document.getElementById('signupForm').addEventListener('submit', function(e) {
   e.preventDefault();
 

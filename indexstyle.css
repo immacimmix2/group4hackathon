@@ -249,3 +249,16 @@ input, select {
     transform: translateY(0);
   }
 }
+a{
+  color: #00d900;
+  font-size: larger;
+  margin: auto;
+}
+
+#signupSelect {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}

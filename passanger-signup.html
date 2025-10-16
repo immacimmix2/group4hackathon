@@ -7,9 +7,25 @@
   <link rel="stylesheet" href="signup-style.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div id="google_translate_element"></div>
+      <div class="navbar-logo">
+        <span>Transafe</span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
   <div class="container">
     <div id="google_translate_element"></div>
-    <h2>RideNet Passenger Sign Up</h2>
+    <h2>Passenger Sign Up</h2>
     <form id="signupForm">
       <div class="form-group">
         <label for="fullname">Full Name:</label>
@@ -18,7 +34,7 @@
 
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"  placeholder="immacimmix2@gmail.com"required>
+        <input type="email" id="email" name="email" placeholder="immacimmix2@gmail.com" required>
       </div>
 
       <div class="form-group">
@@ -35,25 +51,30 @@
           <option value="other">Other</option>
         </select>
       </div>
+
       <div class="form-group">
         <label for="nin">NIN:</label>
         <input type="text" id="nin" name="nin" required>
       </div>
-      <h2>Next of Kin details</h2>
+
+      <h2>Next of Kin Details</h2>
+
       <div class="form-group">
         <label for="nextofkin">Fullname:</label>
         <input type="text" id="nextofkin" name="nextofkin" required>
       </div>
-        
+
       <div class="form-group">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="+256 784612686" required>
+        <label for="nextkinphone">Phone Number:</label>
+        <input type="tel" id="nextkinphone" name="nextkinphone" placeholder="+256 784612686" required>
       </div>
+
       <div class="form-group">
-        <label for="gender">Relationship:</label>
-        <select id="gender" name="relationship" required>
-          <option value="male">Parent</option>
-          <option value="female">Spouse</option>
+        <label for="relationship">Relationship:</label>
+        <select id="relationship" name="relationship" required>
+          <option value="">Select Relationship</option>
+          <option value="parent">Parent</option>
+          <option value="spouse">Spouse</option>
           <option value="other">Other</option>
         </select>
       </div>
@@ -61,6 +82,10 @@
       <button type="submit">Sign Up</button>
     </form>
   </div>
+
+  <footer>
+    &copy; 2025 Transafe Uganda. All rights reserved.
+  </footer>
 
   <script src="signup-main.js"></script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

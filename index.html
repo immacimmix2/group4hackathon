@@ -18,10 +18,10 @@
 
     <!-- Login Box -->
     <div class="login-container">
-      <h2>Welcome to Safe Move by Kacyber,<br />Your Trusted Travel Partner</h2>
+      <h2>Welcome to Safe Move by Transafe Uganda<br />Your Trusted Travel Partner</h2>
 
       <div class="tabs">
-        <button class="tab" id="loginBtn" onclick="showLogin()">Login</button>
+        <button class="tab" id="loginBtn" onclick="showLogin()">Login </button>
         <button class="tab" id="signupBtn" onclick="showSignup()">
           Signup
         </button>
@@ -73,6 +73,15 @@
           window.location.href = selectedPage; // Redirects to passenger or driver signup page
         }
       }
+
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent actual form submission (page reload)
+    // You could also add validation here before redirecting
+    window.location.href = "rides.html"; // Redirect to rides page
+  });
     </script>
+    <footer>
+    &copy; 2025 Transafe Uganda. All rights reserved.
+  </footer>
   </body>
 </html>

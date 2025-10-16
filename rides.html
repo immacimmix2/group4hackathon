@@ -17,7 +17,7 @@
 
     /* Navbar */
     nav {
-      background: #0f8a0f;
+      background-color: #A8C13F;
       color: #fff;
       padding: 15px 25px;
       font-size: 1.3rem;
@@ -105,29 +105,87 @@
     }
 
     footer {
-      background: #0f8a0f;
+      background-color: #A8C13F;
       color: #fff;
       text-align: center;
       padding: 10px;
       font-size: 14px;
     }
+    .navbar {
+   background-color: #A8C13F;
+  color: white;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 0px;
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
-  <nav>KaCyber Passenger</nav>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div id="google_translate_element"></div>
+      <div class="navbar-logo">
+        <span>Transafe</span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
     <!-- Option 1: Order Ride -->
     <div class="option-card" onclick="window.location.href='order-ride.html'">
-      <img src="car.png" alt="Order Ride">
+      <img src="boda.JPG" alt="Order Ride">
+      <img src="taxi.JPG" alt="Order Ride">
       <h2>Order a Ride</h2>
       <p>Set your pickup and destination locations to request a personalized ride.</p>
       <button id="btnn"><a href="passengerhome.html">Order Now</a></button>
     </div>
 
     <!-- Option 2: Random Boda -->
-    <div class="option-card" onclick="window.location.href='random-boda.html'">
-      <img src="boda.png" alt="Random Ride">
+    <div class="option-card" onclick="window.location.href='scanner.html'">
+      <img src="boda.JPG" alt="Random Ride">
+      <img src="taxi.JPG" alt="Random Ride">
       <h2>Choose Random Ride</h2>
       <p>Need a quick lift? Get connected to the nearest available ride instantly.</p>
       <button id="btnn"><a href="QRcode.html">Find Ride</a></button>
@@ -135,7 +193,21 @@
   </div>
 
   <footer>
-    &copy; 2025 KaCyber Passenger App. All rights reserved.
+    &copy; 2025 Transafe Uganda. All rights reserved.
   </footer>
+  <script>
+    
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', // Default language of your website
+      includedLanguages: 'en,xog,lg,cgg,ach', // You can add more if supported
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    'google_translate_element' // The ID of the div where the widget appears
+  );
+}
+  </script>
+   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

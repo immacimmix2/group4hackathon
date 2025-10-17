@@ -57,7 +57,7 @@ document.getElementById('signupForm').addEventListener('submit', async function 
 
   if (!isValid) return;
 
-  // Submit to backend
+  // ✅ Submit to backend
   try {
     const response = await fetch('http://localhost:3000/users/register', {
       method: 'POST',
@@ -73,8 +73,7 @@ document.getElementById('signupForm').addEventListener('submit', async function 
         NIN,
         Kinname,
         KinPhoneNumber,
-        Relationship,
-        role: "passenger" 
+        Relationship
       })
     });
 
@@ -82,9 +81,8 @@ document.getElementById('signupForm').addEventListener('submit', async function 
 
     const successMessage = document.getElementById('successMessage');
     if (response.ok) {
-      successMessage.textContent = 'Signup successful! You can now login.';
+      successMessage.textContent = '✅ Signup successful! You can now login.';
       successMessage.style.color = 'green';
-       window.location.href="passengerhome.html"
       this.reset(); // Clear form
     } else {
       successMessage.textContent = data.message || 'Signup failed. Please try again.';
@@ -92,7 +90,7 @@ document.getElementById('signupForm').addEventListener('submit', async function 
     }
   } catch (err) {
     console.error(err);
-    alert('Server error. Make sure your backend is running on port 3000.');
+    alert('⚠️ Server error. Make sure your backend is running on port 3000.');
   }
 
   // Helper function for showing errors

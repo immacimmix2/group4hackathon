@@ -1,27 +1,48 @@
-function showForm(type) {
-      document.getElementById("loginTab").classList.remove("active");
-      document.getElementById("registerTab").classList.remove("active");
-      document.getElementById("loginForm").classList.remove("active");
-      document.getElementById("registerForm").classList.remove("active");
+// login.js
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      if (type === "login") {
-        document.getElementById("loginTab").classList.add("active");
-        document.getElementById("loginForm").classList.add("active");
-      } else {
-        document.getElementById("registerTab").classList.add("active");
-        document.getElementById("registerForm").classList.add("active");
-      }
+    // Get input values
+    const identifier = document.getElementById("identifier").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Simple frontend validation
+    if (!identifier || !password) {
+        alert("Please fill in both fields.");
+        return;
     }
 
-    function setLanguage(lang) {
-      localStorage.setItem("language", lang);
-      alert("Language set to " + lang);
-    }
+    try {
+        // Send login request to backend
+        const response = await fetch("http://localhost:3000/login/loginUser", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ identifier, password })
+        });
 
-    function goToSignupPage() {
-      const userType = document.getElementById("userType").value;
-      if (userType === "driver") window.location.href = "signup_driver.html";
-      else if (userType === "rider") window.location.href = "signup_rider.html";
-      else if (userType === "client") window.location.href = "signup_client.html";
+        const data = await response.json();
+
+        if (response.ok) {
+            // Save token and role to localStorage
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("role", data.user.role);
+
+            // Redirect based on role
+            switch (data.user.role) {
+                case "passenger":
+                    window.location.href = "passengerhome.html";
+                    break;
+                case "driver":
+                    window.location.href = "driverhome.html";
+                    break;
+                default:
+                    alert("Unknown user role!");
+            }
+        } else {
+            alert(data.message || "Login failed. Check your credentials.");
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Server error. Please try again later.");
     }
-    
+});

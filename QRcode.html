@@ -82,6 +82,15 @@
   <button id="startBtn" class="btn">Start Scanner</button>
   <button id="stopBtn" class="btn stop">Stop Scanner</button>
 
+  <!-- Passenger QR Scanner Page -->
+<h2>Scan Driver Number Plate</h2>
+<video id="preview" width="300" height="200"></video>
+
+<div id="driverInfo" style="margin-top: 20px;">
+  <!-- Driver details will appear here -->
+</div>
+
+
   <div class="footer">
     © 2025 KaCyber — SafeLink Passenger Verification
   </div>
@@ -143,5 +152,6 @@
     startBtn.addEventListener("click", startScanner);
     stopBtn.addEventListener("click", stopScanner);
   </script>
+  
 </body>
 </html>

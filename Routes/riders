@@ -1,0 +1,11 @@
+const express = require("express")
+const { registerRider, getRiders, getDriverByNumberPlate} = require("../controllers/riders");
+const router = express.Router();
+
+
+router.post('/registerRider', registerRider);
+router.get('/getRiders', getRiders);
+router.get("/vehicles/:numberPlate", getDriverByNumberPlate);
+
+
+module.exports = router;

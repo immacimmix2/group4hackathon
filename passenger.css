@@ -38,6 +38,7 @@
       background: #fff;
       box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
       padding-top: 30px;
+      height: 500px;
     }
 
     .sidebar ul {

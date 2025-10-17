@@ -25,31 +25,37 @@
     <h2>Welcome to Safe Move by Kacyber,<br>Your Trusted Travel Partner</h2>
     
     <div class="tabs">
-        
-      <button class="tab active" id="loginTab" onclick="showForm('login')">Login</button>
-      <button class="tab" id="registerTab" onclick="showForm('register')">Sign Up</button>
+      <button class="tab active" id="loginTab">Login</button>
+      <button class="tab" id="registerTab" onclick="openSignupPopup()">Sign Up</button>
     </div>
 
     <!-- Login Form -->
     <form id="loginForm" class="form active">
-      <input type="text" placeholder="Email / Phone Number" required />
-      <input type="password" placeholder="Password" required />
+      <input type="text" id="identifier" placeholder="Email / Phone Number" required />
+      <small class="error" id="identifierError"></small>
+
+      <input type="password" id="password" placeholder="Password" required />
+      <small class="error" id="passwordError"></small>
+
       <button type="submit" class="btn">Login</button>
+
       <a href="#" class="forgot">Forgot Password</a>
       <p class="google">Continue with Google</p>
     </form>
-
-    <!-- Register Form -->
-    <form id="SignupForm" class="form">
-      <select class="dropdown" id="userType" onchange="goToSignupPage()">
-        <option value="client">Passenger</option>
-        <option value="driver">Driver</option>
-        <option value="rider">Rider</option>
-      </select>
-    </form>
   </div>
-  <script src="script.js"></script>
-  <script scr="login.js"></script>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <h3>Sign Up As:</h3>
+      <button class="passenger-btn" onclick="goToSignup('passenger')">Passenger</button>
+      <button class="driver-btn" onclick="goToSignup('driver')">Driver</button>
+      <button class="close-btn" onclick="closeSignupPopup()">Cancel</button>
+    </div>
+  </div>
+  
+<script src="loginauth.js"></script>
+  <script src="login.js"></script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   
 </body>

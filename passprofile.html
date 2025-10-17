@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passenger Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .profile-container {
+      background: white;
+      width: 360px;
+      border-radius: 20px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+      margin-bottom: 15px;
+    }
+
+    .upload-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background-color: #007bff;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      font-size: 12px;
+    }
+
+    h2 {
+      margin: 10px 0 5px 0;
+      color: #333;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+
+    .info p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .info span {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .settings-btn {
+      margin-top: 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .settings-btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <button class="upload-btn" onclick="document.getElementById('profileUpload').click()">Change Photo</button>
+    <input type="file" id="profileUpload" accept="image/*" hidden />
+
+    <img id="profilePreview" class="profile-img" src="https://via.placeholder.com/120" alt="Profile Photo" />
+    <h2 id="username">Passenger Name</h2>
+
+    <div class="info">
+      <p><span>Phone:</span> <span id="phone">Loading...</span></p>
+      <p><span>Email:</span> <span id="email">Loading...</span></p>
+      <p><span>Passenger ID:</span> <span id="passengerId">Loading...</span></p>
+    </div>
+
+    <button class="settings-btn" onclick="goToSettings()">Settings ⚙️</button>
+  </div>
+
+  <script>
+    // ✅ Check if token exists
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please log in first!");
+      window.location.href = "index.html"; // redirect to login page
+    }
+
+    // ✅ Fetch passenger data
+    fetch("http://localhost:5000/api/passengers/me", {
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("username").textContent = data.firstname + " " + data.lastname;
+        document.getElementById("phone").textContent = data.phone;
+        document.getElementById("email").textContent = data.email;
+        document.getElementById("passengerId").textContent = data._id;
+        if (data.profilePhoto) {
+          document.getElementById("profilePreview").src = data.profilePhoto;
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Failed to load profile. Please log in again.");
+        localStorage.clear();
+        window.location.href = "index.html";
+      });
+
+    //  Preview new photo
+    const upload = document.getElementById('profileUpload');
+    const preview = document.getElementById('profilePreview');
+
+    upload.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => preview.src = e.target.result;
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Settings button placeholder
+    function goToSettings() {
+      alert("Settings page coming soon!");
+      // Later: window.location.href = "settings.html";
+    }
+  </script>
+</body>
+</html>

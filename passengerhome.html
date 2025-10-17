@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passengers Home</title>
-    <link rel="stylesheet" href="passenger.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passenger Home | Transafe</title>
+  <link rel="stylesheet" href="passenger.css" />
 </head>
+
 <body>
-   <nav class="navbar">
-    <div class="navbar-logo">KaCyber</div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <div id="google_translate_element"></div>
+      <span>Transafe</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rides.html">Rides</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
   </nav>
 
+  <!-- Main Content Container -->
   <div class="container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <ul>
         <li><a href="rides.html">Rides</a></li>
         <li><a href="passprofile.html">Profile</a></li>
         <li><a href="index.html">Logout</a></li>
       </ul>
-      
+
+      <div class="emergency-section">
+        <h3>Report an Incident</h3>
+        <button class="emergency-btn">Emergency</button>
+        <button class="emergency-btn">Next of Kin</button>
+      </div>
     </aside>
 
+    <!-- Main Section -->
     <main class="mainbar">
-        <h2 id="h">Welcome back, Ready for your next Ride?</h2>
-      <div class="main-vertical">
-        
-        <!-- Order Ride Section -->
-        <div class="main-section section1">
+      <h2 class="welcome-text">Welcome back! Ready for your next ride?</h2>
+
+      <div class="main-content">
+        <!-- Ride Order Section -->
+        <section class="main-section order-section">
           <form id="rideOrderForm">
             <h2>Order a Ride</h2>
 
             <label for="pickup">Pickup Location</label>
-            <input type="text" id="pickup" name="pickup" placeholder="Where are you now?" required>
+            <input type="text" id="pickup" name="pickup" placeholder="Where are you now?" required />
 
             <label for="destination">Destination</label>
-            <input type="text" id="destination" name="destination" placeholder="Where to?" required>
+            <input type="text" id="destination" name="destination" placeholder="Where to?" required />
 
             <label for="vehicleType">Vehicle Type</label>
             <select id="vehicleType" name="vehicleType" required>
@@ -44,38 +62,45 @@
               <option value="bus">Bus</option>
             </select>
 
-            <button type="submit">Request Ride</button>
+            <button type="submit" class="request-btn">Request Ride</button>
           </form>
-        </div>
+        </section>
 
         <!-- Map Section -->
-        <div class="main-section map-section">
-          <img src="map.PNG" alt="Map Preview">
-        </div>
+        <section class="main-section map-section">
+          <img src="map.PNG" alt="Map Preview" />
+        </section>
 
         <!-- Safety Tips Section -->
-        <div class="main-section tips-section">
+        <section class="main-section tips-section">
           <h2>Today's Safety Tips</h2>
+
           <div class="tip">
             <h3>1. Verify Your Ride</h3>
             <p>Confirm the number plate and driver’s name before boarding.</p>
           </div>
+
           <div class="tip">
             <h3>2. Share Your Trip</h3>
             <p>Send your trip details to a trusted friend or family member.</p>
           </div>
+
           <div class="tip">
             <h3>3. Wear Your Helmet</h3>
             <p>Always fasten your helmet before the trip begins.</p>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   </div>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 KaCyber Passenger App. All rights reserved.
+    &copy; 2025 Transafe Uganda. All rights reserved.
   </footer>
 
+  <!-- Scripts -->
+  <script src="passengerhome.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

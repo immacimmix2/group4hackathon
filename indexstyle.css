@@ -210,7 +210,7 @@ input, select {
 .btn {
   width: 95%;
   padding: 12px;
-  background: #00d900;
+  background-color: #bfee05;
   border: none;
   color: white;
   font-size: 18px;
@@ -291,4 +291,16 @@ input, select {
     }
     .modal-content h3{
       color: #0f8a0f;
-    }
+    }a{
+  color: #00d900;
+  font-size: larger;
+  margin: auto;
+}
+
+#signupSelect {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}

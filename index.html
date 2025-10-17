@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kacyber - Login / SignUp</title>
-  <link rel="stylesheet" href="indexstyle.css" />
-</head>
-<body class="login-page">
-    <div id="google_translate_element"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kacyber - Login / SignUp</title>
+    <link rel="stylesheet" href="indexstyle.css" />
+  </head>
+  <body class="login-page">
+    <!-- Top Bar (Logo + Languages) -->
+    <div class="top-bar">
+      <img src="logo.jpg" class="logo" alt="Kacyber Logo" />
 
-  <!-- Top Bar (Logo + Languages) -->
-  <div class="top-bar">
-    <img src="logo.jpg" class="logo" alt="Kacyber Logo" />
-    
-    <div class="lang-buttons">
-      <button class="lang-btn" onclick="setLanguage('english')">English</button>
-      <button class="lang-btn" onclick="setLanguage('luganda')">Luganda</button>
-      <button class="lang-btn" onclick="setLanguage('lusoga')">Lusoga</button>
+      <div class="lang-buttons">
+        <div id="google_translate_element"></div>
+      </div>
     </div>
-  </div>
 
   <!-- Login Box -->
   <div class="login-container">

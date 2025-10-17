@@ -1,5 +1,7 @@
 // RideNet Passenger Sign-Up Script
 
+const BASE_URL = "http://localhost:3000";
+
 document.getElementById('signupForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -50,3 +52,43 @@ function googleTranslateElementInit() {
     'google_translate_element' // The ID of the div where the widget appears
   );
 }
+// ===== GOOGLE TRANSLATE INIT =====
+
+
+// ===== HAMBURGER MENU =====
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+// ===== FORM VALIDATION =====
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fullname = document.getElementById("fullname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const nin = document.getElementById("nin").value.trim();
+
+  if (!fullname || !email || !phone || !nin) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  // Simple email validation
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Simple phone number validation
+  if (!/^\+?\d{9,15}$/.test(phone)) {
+    alert("Please enter a valid phone number (with country code if possible).");
+    return;
+  }
+
+  alert("Signup successful! 🎉");
+  document.getElementById("signupForm").reset();
+});

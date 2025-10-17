@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard | KaCyber</title>
+  <link rel="stylesheet" href="driverhome.css" />
+</head>
+<body>
+  <!-- Navbar -->
+ <nav class="navbar">
+    <div id="google_translate_element"></div>
+    <div class="navbar-logo">
+      <span>Transafe</span>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rides.html">Rides</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#">Active Rides</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="mainbar">
+      <h2>Welcome back, Driver!</h2>
+      <p>Here’s your performance summary for today.</p>
+
+      <!-- Dashboard Stats -->
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Today's Rides</h3>
+          <p id="rideCount">5</p>
+        </div>
+        <div class="stat-card">
+          <h3>Total Earnings</h3>
+          <p id="earnings">UGX 120,000</p>
+        </div>
+        <div class="stat-card">
+          <h3>Rating</h3>
+          <p id="rating">4.8 ★</p>
+        </div>
+      </div>
+
+      <!-- Ride Control Section -->
+      <section class="ride-control">
+        <h3>Ride Management</h3>
+        <p>Status: <span id="rideStatus">Available</span></p>
+        <button id="acceptRide">Accept Ride</button>
+        <button id="endRide" disabled>End Ride</button>
+      </section>
+
+      <!-- Map Placeholder -->
+      <section class="map-section">
+        <h3>Live Map</h3>
+        <img src="map.PNG" alt="Driver Map">
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 Transafe Uganda. All rights reserved.
+  </footer>
+
+  <script >
+    
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', // Default language of your website
+      includedLanguages: 'en,xog,lg,cgg,ach', // You can add more if supported
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    'google_translate_element' // The ID of the div where the widget appears
+  );
+}
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

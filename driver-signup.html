@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RideNet Driver Sign Up</title>
+  <title>Driver Sign Up</title>
   <link rel="stylesheet" href="signup-style.css">
   <style>
     .error { color: red; font-size: 0.9em; }
@@ -14,6 +14,22 @@
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div id="google_translate_element"></div>
+      <div class="navbar-logo">
+        <span>Transafe</span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
   <div class="container">
     <div id="google_translate_element"></div>
     <h2>RideNet Driver Sign Up</h2>
@@ -53,9 +69,12 @@
           <option value="">Select Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
         </select>
         <span id="genderError" class="error"></span>
       </div>
+
 
       <!-- NIN -->
       <div class="form-group">
@@ -69,6 +88,10 @@
         <label for="vehicle">Vehicle Type:</label>
         <select id="vehicle" name="vehicle" required>
           <option value="">Select Vehicle</option>
+          <option value="bus">Bus</option>
+          <option value="taxi">Taxi</option>
+          <option value="car">Car</option>
+          <option value="boda">Boda Boda</option>
           <option value="bus">Bus</option>
           <option value="taxi">Taxi</option>
           <option value="car">Car</option>
